@@ -53,6 +53,10 @@ router.post('/delete/:id',async(req,res)=>{
     res.setHeader('Access-Control-Allow-Origin', '*');
     const {id} = req.params;
     await pool.query('DELETE FROM marca WHERE id = ?',[id]);
+    res.json({
+        status:"200",
+        message:"Se ha eliminado correctamente"
+    });
 });
 
 module.exports = router;
